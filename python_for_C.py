@@ -2,7 +2,7 @@ import os
 
 
 def main():
-    os.system("dir")
+    os.system("ls")
     
    
 
