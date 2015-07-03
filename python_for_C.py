@@ -2,9 +2,8 @@ import os
 
 
 def main():
-    os.system("sudo ~/display16x32/rpi-rgb-led-matrix/text-example -f ~/display16x32/rpi-rgb-led-matrix/fonts/5x8.bdf
-")
-    os.system("cntrl+D")
+    os.system("sudo ~/display16x32/rpi-rgb-led-matrix/text-example -f ~/display16x32/rpi-rgb-led-matrix/fonts/5x8.bdf")
+   # os.system("cntrl+D")
     
    
 
