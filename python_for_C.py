@@ -14,6 +14,7 @@ def main():
         my_time = datetime.now().strftime("%A %b,%d %I:%M") 
         time.sleep(10)  
         os.system("%s" %my_time)
+
     
 
 main()
