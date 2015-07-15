@@ -115,9 +115,11 @@ int main(int argc, char *argv[]) {
   if (all_extreme_colors)
     canvas->SetPWMBits(1);
 
+  int x_scroll = x_orig;
   const int x = x_orig;
   int y = y_orig;
-
+  int Ipp = 0;
+  int Npp =  0;
   if (isatty(STDIN_FILENO)) {
     // Only give a message if we are interactive. If connected via pipe, be quiet
     printf("Enter lines. Full screen or empty line clears screen.\n"
@@ -135,8 +137,22 @@ int main(int argc, char *argv[]) {
     }
     if (line_empty)
       continue;
-    rgb_matrix::DrawText(canvas, font, x, y + font.baseline(), color, line);
+    rgb_matrix::DrawText(canvas, font, x_scroll, y + font.baseline(), color, line);
     y += font.height();
+
+	//Addition//
+
+    Npp = (-strlen(line)*10);
+    Ipp = (strlen(line)*10);
+
+	if (x_scroll <= Npp){
+                x_scroll = 0;
+	}
+    if(!(Ipp <= 80)){
+	x_scroll = x_scroll - 2;
+	}
+
+	/////////////
   }
 
   // Finished. Shut down the RGB matrix.
@@ -145,3 +161,4 @@ int main(int argc, char *argv[]) {
 
   return 0;
 }
+
