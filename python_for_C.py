@@ -28,17 +28,22 @@ def weather():
     x = re.sub("Temp_kf None",'',x)
     temp_today = x
 
-    Npp= (len())
+    Npp= (len(Intro_today))
 
     for x in range (Npp):
         os.system( echo + " " + Intro_today)
         time.sleep(.1)
+
+    Npp= (len(status_today))
     for x in range (Npp):
         os.system( echo + " " + status_today)
         time.sleep(.1)
+
+    Npp= (len(clouds_today))
     for x in range (Npp):
         os.system( echo + " " + clouds_today)
         time.sleep(.1)
+    Npp= (len(temp_today))
     for x in range (Npp):
         os.system( echo + " " + temp_today)
         time.sleep(.1)
