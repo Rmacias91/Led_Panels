@@ -3,6 +3,7 @@ from datetime import datetime
 import time
 import pyowm
 import re
+import json
 
 def weather():
     echo = "echo"
@@ -48,7 +49,23 @@ def weather():
         os.system( echo + " " + temp_today)
         time.sleep(.1)
 
+def twitter():
+    tweets_data_path = 'twitter_data.txt'
+    tweets_data = []
+    tweets_file = open(tweets_data_path, 'r')
+    for line in tweets_file:
+        try:
+            tweet = json.loads(line)
+            tweets_data.append(tweet)
+        except:
+            continue
 
+    for tweeter in tweets_data:
+        Npp = (len(tweeter['text'])*10)
+        for y in range (Npp):
+            time.sleep(.1)
+            os.system(echo + " " + tweeter['text'])
+            
 
 
 def main():
@@ -76,7 +93,8 @@ def main():
             my_time = datetime.now().strftime("%A %b,%d %I:%M%p")
             time.sleep(.1)
             os.system(echo + " " + my_time)
-        weather()
+        #weather()
+        twitter()
 main()
 
 
