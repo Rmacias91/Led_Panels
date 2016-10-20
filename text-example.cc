@@ -115,7 +115,7 @@ int main(int argc, char *argv[]) {
   if (all_extreme_colors)
     canvas->SetPWMBits(1);
 
-  int x_scroll = x_orig;
+  int x_scroll = x_orig+ 8;
   const int x = x_orig;
   int y = y_orig;
   int Ipp = 0;
@@ -146,7 +146,7 @@ int main(int argc, char *argv[]) {
     Ipp = (strlen(line)*10);
 
 	if (x_scroll <= Npp){
-                x_scroll = 0;
+                x_scroll = 8;
 	}
     if(!(Ipp <= 80)){
 	x_scroll = x_scroll - 2;
