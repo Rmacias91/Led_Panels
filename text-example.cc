@@ -115,7 +115,11 @@ int main(int argc, char *argv[]) {
   if (all_extreme_colors)
     canvas->SetPWMBits(1);
 
+<<<<<<< HEAD
   int x_scroll = x_orig+ 8;
+=======
+  int x_scroll = x_orig;
+>>>>>>> 50edb1601e011298b65f5a62733db5fa893b2c98
   const int x = x_orig;
   int y = y_orig;
   int Ipp = 0;
@@ -146,7 +150,11 @@ int main(int argc, char *argv[]) {
     Ipp = (strlen(line)*10);
 
 	if (x_scroll <= Npp){
+<<<<<<< HEAD
                 x_scroll = 8;
+=======
+                x_scroll = 0;
+>>>>>>> 50edb1601e011298b65f5a62733db5fa893b2c98
 	}
     if(!(Ipp <= 80)){
 	x_scroll = x_scroll - 2;
